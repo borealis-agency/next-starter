@@ -1,0 +1,52 @@
+# Simple workflow that does these steps on pull request to certain branches:
+# 1. Install npm dependencies (with caching enabled)
+# 2. Run JS/TS linting
+# 3. Run style linting
+# $. Show report from step #2 if any warnings/errors were found
+
+name: Lint and typecheck
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - "sprint/**"
+
+jobs:
+  check:
+    name: Lint on ${{ matrix.os }} using Node.js v${{ matrix.node-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+      - name: Install npm packages
+        run: npm ci --prefer-offline --no-audit
+      - name: Run ESLint
+        run: npm run lint:js:report
+        continue-on-error: true
+      - name: Run Stylelint
+        run: npm run lint:styles
+        continue-on-error: true
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit --pretty
+        continue-on-error: true
+      - name: Show Code Linting Results
+        uses: ataylorme/eslint-annotate-action@1.2.0
+        if: always()
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          report-json: "eslint_report.json"

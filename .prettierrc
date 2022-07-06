@@ -1,0 +1,17 @@
+{
+  "singleQuote": false,
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "jsxSingleQuote": false,
+  "printWidth": 160,
+  "quoteProps": "as-needed",
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "importOrder": ["^@components", "^@modules", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

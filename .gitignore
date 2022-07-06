@@ -33,3 +33,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Ignore eslint reports used for CI in case someone generates them locally
+eslint_report.json
+
+# Ignore any compressed archives we might create with build process
+*.zip
+*.7z
