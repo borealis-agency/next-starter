@@ -7,36 +7,49 @@
     "editor.tabSize": 2,
     "editor.quickSuggestions": {
       "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"]
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "strings": true
+    }
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.maxTokenizationLineLength": 2500
+    "editor.tabSize": 2
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.maxTokenizationLineLength": 2500
+    "editor.tabSize": 2
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.maxTokenizationLineLength": 2500
+    "editor.tabSize": 2
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.maxTokenizationLineLength": 2500
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
   }
 }
