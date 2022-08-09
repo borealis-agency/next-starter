@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run dev:packagecheck && next dev",
     "build": "next build",
     "start": "next start",
     "lint:js": "next lint",
     "lint:js:report": "eslint --output-file eslint_report.json --format json",
     "lint:styles": "npx stylelint '**/*.{css,scss,sass}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev:packagecheck": "npx --yes package-changed"
   },
   "dependencies": {
     "axios": "0.27.2",

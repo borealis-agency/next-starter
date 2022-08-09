@@ -40,3 +40,6 @@ eslint_report.json
 # Ignore any compressed archives we might create with build process
 *.zip
 *.7z
+
+# Ignore package-changed computed hash
+.packagehash
