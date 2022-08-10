@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run dev:packagecheck && next dev",
-    "build": "next build",
+    "build": "pathpida --enableStatic --ignorePath .gitignore && next build",
     "start": "next start",
     "lint:js": "next lint",
     "lint:js:report": "eslint --output-file eslint_report.json --format json",
     "lint:styles": "npx stylelint '**/*.{css,scss,sass}'",
     "prepare": "husky install",
-    "dev:packagecheck": "npx --yes package-changed"
+    "packagecheck": "npx --yes package-changed",
+    "dev:next": "npm run packagecheck && next dev",
+    "dev:path": "pathpida --enableStatic --ignorePath .gitignore --watch",
+    "dev": "concurrently \"npm:dev:*\""
   },
   "dependencies": {
     "axios": "0.27.2",
@@ -28,6 +30,7 @@
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.30.5",
     "@typescript-eslint/parser": "5.30.5",
+    "concurrently": "7.3.0",
     "cross-env": "7.0.3",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.0",
@@ -35,6 +38,7 @@
     "husky": "8.0.1",
     "hygen": "6.2.8",
     "lint-staged": "13.0.3",
+    "pathpida": "0.18.1",
     "prettier": "2.7.1",
     "sass": "1.53.0",
     "stylelint": "14.9.1",

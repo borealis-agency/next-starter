@@ -1,3 +1,4 @@
+import { staticPath } from "@/lib/$path";
 import styles from "@/styles/Home.module.css";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -9,7 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Borealis Next Starter Template</title>
         <meta name="description" content="Next.js starter template made by Borealis" />
-        <link rel="icon" href="/borealis-logo-icon-red.svg" />
+        <link rel="icon" href={staticPath.borealis_logo_icon_red_svg} />
       </Head>
 
       <main className={styles.main}>
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
         <a href="https://borealis.agency" target="_blank" rel="noopener noreferrer">
           Created by
           <span className={styles.logo}>
-            <Image src="/borealis-agency-horizontal-logo-subtitle-dark.svg" alt="Borealis Logo" width={96} height={32} />
+            <Image src={staticPath.borealis_agency_horizontal_logo_subtitle_dark_svg} alt="Borealis Logo" width={96} height={32} />
           </span>
         </a>
       </footer>

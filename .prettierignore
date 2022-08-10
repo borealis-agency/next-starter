@@ -3,3 +3,4 @@
 /dist
 /coverage
 api/**/client.ts
+/lib/$*.ts
