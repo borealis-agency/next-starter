@@ -45,4 +45,4 @@ eslint_report.json
 .packagehash
 
 # Ignore HTML example of all icons. This doesn't need to be deployed
-public/icons/icon-symbols-example.html
+public/icon-sprite/icon-symbols-example.html
