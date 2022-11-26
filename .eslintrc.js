@@ -76,7 +76,7 @@ module.exports = {
       {
         rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
         message:
-          "Boolean props must be prefixed with is/has/should/can/did/will. Prop ({{ propName }}) must be renamed to match this pattern, depending on the context. (e.g. isValid, hasItems)",
+          'Boolean props must be prefixed with is/has/should/can/did/will. Prop "{{ propName }}" must be renamed to match this pattern, depending on the context. (e.g. isValid, hasItems)',
       },
     ],
     // Always require boolean props to have explicit true/false value. <MyComponent isBad /> vs <MyComponent isGood={true} />
