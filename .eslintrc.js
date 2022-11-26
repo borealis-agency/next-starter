@@ -25,6 +25,7 @@ module.exports = {
   },
   rules: {
     "react/display-name": "off",
+    "react/jsx-key": ["error", { checkFragmentShorthand: true }],
     // Prevents accidental double imports that might sometime occur with auto import
     "no-duplicate-imports": "error",
     // Turn of this JavaScript no-unused-vars in order no to trigger false positives in TypeScript code
