@@ -40,7 +40,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/naming-convention": [
-      errorInNonDevelopmentEnvironment,
+      "error",
       {
         // Force most variables and properties to use PascalCase or camelCase
         // We would force camelCase case here exclusively, but this cannot work since React components have to be PascalCase
