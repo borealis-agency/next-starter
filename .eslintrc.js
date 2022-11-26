@@ -1,10 +1,12 @@
+const errorInNonDevelopmentEnvironment = process.env.NODE_ENV === "production" || process.env.CI === true || process.env.CI === "true" ? "error" : "warn";
+
 module.exports = {
   root: true,
   env: {
     browser: true,
     es2021: true,
   },
-  extends: "next/core-web-vitals",
+  extends: ["next/core-web-vitals", "plugin:import/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -15,6 +17,12 @@ module.exports = {
     project: ["./tsconfig.eslint.json"],
   },
   plugins: ["react", "@typescript-eslint"],
+  settings: {
+    "import/resolver": {
+      typescript: true,
+      node: true,
+    },
+  },
   rules: {
     "react/display-name": "off",
     // Prevents accidental double imports that might sometime occur with auto import
@@ -23,7 +31,7 @@ module.exports = {
     "no-unused-vars": "off",
     // Error for this only in production or CI environment in order not to impact local development too much. Warning is enough in local development. CI will surface this if left in code.
     "@typescript-eslint/no-unused-vars": [
-      process.env.NODE_ENV === "production" || process.env.CI === true || process.env.CI === "true" ? "error" : "warn",
+      errorInNonDevelopmentEnvironment,
       {
         // Allow unused variables with _ prefix (e.g. _index). Useful for callback function where positional arguments must be used, but maybe only second or third argument is of interest to you.
         argsIgnorePattern: "^_",
@@ -32,7 +40,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/naming-convention": [
-      process.env.NODE_ENV === "production" || process.env.CI === true || process.env.CI === "true" ? "error" : "warn",
+      errorInNonDevelopmentEnvironment,
       {
         // Force most variables and properties to use PascalCase or camelCase
         // We would force camelCase case here exclusively, but this cannot work since React components have to be PascalCase
@@ -71,15 +79,19 @@ module.exports = {
           "Boolean props must be prefixed with is/has/should/can/did/will. Prop ({{ propName }}) must be renamed to match this pattern, depending on the context. (e.g. isValid, hasItems)",
       },
     ],
+    // Always require boolean props to have explicit true/false value. <MyComponent isBad /> vs <MyComponent isGood={true} />
     "react/jsx-boolean-value": ["error", "always"],
     // Error for this only in production or CI environment in order not to impact local development too much. Warning is enough in local development. CI will surface this if left in code.
     "no-restricted-syntax": [
-      process.env.NODE_ENV === "production" || process.env.CI === true || process.env.CI === "true" ? "error" : "warn",
+      errorInNonDevelopmentEnvironment,
       {
         selector: "CallExpression[callee.object.name='console'][callee.property.name!=/^(error|warn)$/]",
-        message: "Unexpected property on console object was called. Only console.error or console.warn are allowed.",
+        message: "Unexpected property on console object was called. Only console.error and console.warn are allowed.",
       },
     ],
+    // Missing dependency array values for React hooks can lead to bugs. Warn in development to let the developer know, but error in non development environment to point this out and fail the build, CI check etc.
+    "react-hooks/exhaustive-deps": errorInNonDevelopmentEnvironment,
+    "react/jsx-curly-brace-presence": ["error", { props: "never", children: "never", propElementValues: "always" }],
     curly: ["error", "all"],
   },
 };
