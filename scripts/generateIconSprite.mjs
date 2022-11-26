@@ -67,7 +67,5 @@ for (const iconRelativePath of allFilePaths) {
   spriter.add(path.resolve(currentDirectory, iconRelativePath), getSvgFileName(iconRelativePath), fs.readFileSync(iconRelativePath, "utf-8"));
 }
 
-const allIconNames = allFilePaths.map((iconPath) => getFullyCleanIconName(iconPath)).sort();
-console.log('allIconNames: ', allIconNames);
-const compiledSpriteName = await compileSvgSprite(spriter);
-console.log('compiledSpriteName: ', compiledSpriteName);
+const _allIconNames = allFilePaths.map((iconPath) => getFullyCleanIconName(iconPath)).sort();
+const _compiledSpriteName = await compileSvgSprite(spriter);
