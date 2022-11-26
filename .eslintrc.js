@@ -29,6 +29,15 @@ module.exports = {
     "no-duplicate-imports": "error",
     // Turn of this JavaScript no-unused-vars in order no to trigger false positives in TypeScript code
     "no-unused-vars": "off",
+    "no-useless-rename": [
+      "error",
+      {
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+      },
+    ],
+    "object-shorthand": ["error", "properties"],
     // Error for this only in production or CI environment in order not to impact local development too much. Warning is enough in local development. CI will surface this if left in code.
     "@typescript-eslint/no-unused-vars": [
       errorInNonDevelopmentEnvironment,
