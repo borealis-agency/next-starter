@@ -12,7 +12,8 @@
     "packagecheck": "npx --yes package-changed",
     "dev:next": "npm run packagecheck && next dev",
     "dev:path": "pathpida --enableStatic --ignorePath .gitignore --watch",
-    "dev": "concurrently \"npm:dev:*\""
+    "dev": "concurrently \"npm:dev:*\"",
+    "generate:iconsprite": "node scripts/generateIconSprite.mjs"
   },
   "dependencies": {
     "axios": "0.27.2",
