@@ -5,4 +5,4 @@ append: true
 skip_if: ./<%= name %>;
 eof_last: false
 ---
-export * from "./<%= name %>";
+export * from "./<%= name %>/<%= name %>";
