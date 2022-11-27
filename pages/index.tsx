@@ -1,60 +1,71 @@
-import { staticPath } from "@/lib/$path";
-import styles from "@/styles/Home.module.css";
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
-const Home: NextPage = () => {
+const Home = () => {
+  // AFTER_START_CLEANUP_START
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Borealis Next Starter Template</title>
+        <title>Borealis Next.js Starter Template</title>
         <meta name="description" content="Next.js starter template made by Borealis" />
-        <link rel="icon" href={staticPath.borealis_logo_icon_red_svg} />
+        <link rel="icon" href="/borealis-logo-icon-red.svg" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/canary/examples" className={styles.card}>
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" className={styles.card}>
-            <h2>Deploy &rarr;</h2>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+      <main className="main">
+        <h1 className="main__title">Borealis Next.js Starter</h1>
+        <p className="main__subtitle">Starting template for React projects using Next.js</p>
+        <div className="section">
+          <h2 className="section__title">Features</h2>
+          <div className="section__grid">
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">Typescript</h3>
+              <p>Comes with Typescript set up out of the box.</p>
+            </div>
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">GitHub Actions</h3>
+              <p>GitHub Actions code checking is included out of the box and runs on each pull request.</p>
+            </div>
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">SVG icon sprite generation</h3>
+              <p>Easy to use SVG icon sprite generation. No need to use Fontastic, IcoMoon or similar tools.</p>
+              <p>Just drop SVG icons into a folder, run a script and you are good to go!</p>
+            </div>
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">Code generators</h3>
+              <p>Automatic code generation for common things such as components and modules.</p>
+              <p>
+                No need to copy old code, clean it up and remember where to import/export code. Single line commands that create code that is ready to be worked
+                on.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="section">
+          <h2 className="section__title">First Steps</h2>
+          <div className="section__grid">
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">Documentation</h3>
+              <p>
+                Read different <span className="u-t-bold">README</span> files in this project. They contain documentation about different parts of this
+                template.
+              </p>
+              <p>
+                There is a global <span className="u-t-bold">README</span> file with more generic information, but different folders might have specific
+                information contained within them.
+              </p>
+            </div>
+            <div className="instruction-box">
+              <h3 className="instruction-box__title">Cleanup</h3>
+              <p>This template contains code that is only used to showcase some of its capabilities, but isn't necessary for it to work.</p>
+              <p>
+                Look for comments in code saying <span className="u-t-bold">AFTER_START_CLEANUP</span>. Those are hints about code that can be removed.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a href="https://borealis.agency" target="_blank" rel="noopener noreferrer">
-          Created by
-          <span className={styles.logo}>
-            <Image src={staticPath.borealis_agency_horizontal_logo_subtitle_dark_svg} alt="Borealis Logo" width={96} height={32} />
-          </span>
-        </a>
-      </footer>
-    </div>
+    </>
   );
+  // AFTER_START_CLEANUP_END
 };
 
 export default Home;
