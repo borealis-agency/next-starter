@@ -4,7 +4,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
     "editor.quickSuggestions": {
       "strings": true
     }
@@ -13,7 +12,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
     "editor.quickSuggestions": {
       "strings": true
     }
@@ -21,35 +19,31 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   },
   "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   },
   "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.insertSpaces": true
   }
 }
