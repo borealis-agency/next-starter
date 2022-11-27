@@ -19,10 +19,12 @@ const Home = () => {
             <div className="instruction-box">
               <h3 className="instruction-box__title">Typescript</h3>
               <p>Comes with Typescript set up out of the box.</p>
+              <p>Typescript is even set up for CSS Modules for better autocomplete experience.</p>
             </div>
             <div className="instruction-box">
               <h3 className="instruction-box__title">GitHub Actions</h3>
               <p>GitHub Actions code checking is included out of the box and runs on each pull request.</p>
+              <p>Catch code and style errors before they are merged.</p>
             </div>
             <div className="instruction-box">
               <h3 className="instruction-box__title">SVG icon sprite generation</h3>
@@ -33,8 +35,8 @@ const Home = () => {
               <h3 className="instruction-box__title">Code generators</h3>
               <p>Automatic code generation for common things such as components and modules.</p>
               <p>
-                No need to copy old code, clean it up and remember where to import/export code. Single line commands that create code that is ready to be worked
-                on.
+                No need to copy old code, clean it up and remember where to import/export code. Single line commands that create consistent code that is ready
+                to be worked on.
               </p>
             </div>
           </div>
