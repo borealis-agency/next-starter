@@ -67,4 +67,4 @@ In case you use another code editor, just make sure these integrations/extension
 - [Prettier](https://prettier.io/) - formats code. If possible, enable it to run on each file save
   - it does format code during each commit automatically, but it might be helpful to see your code formatted immediately
 
-There aren't required, but they can make your developer experience a lot better while working on this project.
+These aren't required, but they can make your developer experience a lot better while working on this project.
