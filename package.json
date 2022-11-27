@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "pathpida --enableStatic --ignorePath .gitignore && next build",
+    "build": "npm run packagecheck && pathpida --enableStatic --ignorePath .gitignore && next build",
     "start": "next start",
     "lint:js": "next lint",
     "lint:js:report": "eslint --output-file eslint_report.json --format json",
     "lint:styles": "npx stylelint \"**/*.{css,scss,sass}\"",
     "prepare": "husky install",
     "packagecheck": "npx --yes package-changed",
-    "dev:next": "npm run packagecheck && next dev",
+    "dev:next": "next dev",
     "dev:path": "pathpida --enableStatic --ignorePath .gitignore --watch",
-    "dev": "concurrently \"npm:dev:*\"",
+    "dev": "npm run packagecheck && concurrently \"npm:dev:*\"",
     "generate:iconsprite": "node scripts/generateIconSprite.mjs"
   },
   "dependencies": {
@@ -53,7 +53,7 @@
     "typescript-plugin-css-modules": "3.4.0"
   },
   "volta": {
-    "node": "16.15.1",
-    "npm": "8.13.2"
+    "node": "18.12.1",
+    "npm": "9.1.2"
   }
 }
