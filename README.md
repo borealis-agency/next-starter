@@ -14,13 +14,13 @@ npm run dev
 
 > This will install npm dependencies if needed. No need to manually install them.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Run this first and check it out, then go through the rest of this documentation.
 
 ## Documentation
 
 Make sure to read this main README file as well as different README files that are contained in other folders. This README contains more general information, but those other README files contain information specific to their folders.
 
-To prevent documentation duplication, where appropriate, this main README will point out other docs that should be read for a particular section.
+To avoid documentation duplication (and it going out of sync), where appropriate, this main README will point out other docs that should be read for a particular section.
 
 ## Generators
 
