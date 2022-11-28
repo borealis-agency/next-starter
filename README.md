@@ -2,9 +2,21 @@ This is a [Next.js](https://nextjs.org/) project created with [Borealis Next.js 
 
 ## Requirements
 
-Make sure you have [Volta](https://volta.sh/) installed in order to automatically use proper Node.js and npm versions.
+Make sure you have [Volta](https://volta.sh/) installed in order to automatically use proper Node.js and npm versions while working on the project.
+
+Volta is also used to clone this project with proper Node.js and npm versions
+
+All commands in any of the documentation in this project are ran from this project root, unless specified otherwise!
 
 ## Getting Started
+
+Clone the template using [create-next-app](https://www.npmjs.com/package/create-next-app)
+
+```bash
+volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter
+```
+
+> This command will make sure that this template is created using Node.js v18 and npm v9. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
 
 To get the project running, just run the development server:
 
