@@ -1,7 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import Head from "next/head";
 
 const Home = () => {
   // AFTER_START_CLEANUP_START
+  const { status, data } = useQuery(["character", "2"], async () => {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/2`);
+    // Uncomment for error
+    // const res = await fetch(`https://rickandmortyapi.com/api/character/DFJASKLD`);
+    return await res.json();
+  });
+
   return (
     <>
       <Head>
@@ -61,6 +69,18 @@ const Home = () => {
               <p>
                 Look for comments in code saying <span className="u-t-bold">AFTER_START_CLEANUP</span>. Those are hints about code that can be removed.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="section">
+          <h2 className="section__title">React Query Demo</h2>
+          <div className="section__grid">
+            <div className="instruction-box">
+              {status === "loading" && <h3>Loading...</h3>}
+              {status === "error" && <h3>Error...</h3>}
+              {data?.error && <h3>Error...</h3>}
+              <div>{data?.name}</div>
+              <div>{data?.species}</div>
             </div>
           </div>
         </div>
