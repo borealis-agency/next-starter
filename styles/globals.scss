@@ -100,4 +100,25 @@ h6 {
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.fancy-button {
+  font-family: inherit;
+  font-weight: 600;
+  background-color: rgb(255 255 255 / 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(255 255 255 / 0.5);
+  color: #fff;
+  transition: 0.15s background-color ease-in-out;
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.25);
+    cursor: pointer;
+  }
+
+  + .fancy-button {
+    margin-left: 10px;
+  }
+}
 /* AFTER_START_CLEANUP_END */

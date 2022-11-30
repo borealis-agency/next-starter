@@ -1,13 +1,33 @@
 import { useQuery } from "@tanstack/react-query";
 import Head from "next/head";
 
+// AFTER_START_CLEANUP_START
+const delay = (timeout: number) => new Promise((resolve) => setTimeout(() => resolve(true), timeout));
+// AFTER_START_CLEANUP_END
+
 const Home = () => {
   // AFTER_START_CLEANUP_START
-  const { status, data } = useQuery(["character", "2"], async () => {
-    const res = await fetch(`https://rickandmortyapi.com/api/character/2`);
-    // Uncomment for error
-    // const res = await fetch(`https://rickandmortyapi.com/api/character/DFJASKLD`);
-    return await res.json();
+  const rickAndMortyApi = useQuery({
+    queryKey: ["rickandmorty"],
+    queryFn: async () => {
+      await delay(2000);
+      const response = await fetch(`https://rickandmortyapi.com/api/character/2`);
+      return await response.json();
+    },
+    enabled: false,
+  });
+  const rickAndMortyApiError = useQuery<any, { message: string }>({
+    queryKey: ["rickandmortyerror"],
+    queryFn: async () => {
+      const response = await fetch(`https://rickandmortyapi.com/api/character/testidnoexist`);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch Rick and Morty character.");
+      }
+
+      return await response.json();
+    },
+    enabled: false,
   });
 
   return (
@@ -73,14 +93,33 @@ const Home = () => {
           </div>
         </div>
         <div className="section">
-          <h2 className="section__title">React Query Demo</h2>
+          <h2 className="section__title">Demos</h2>
           <div className="section__grid">
             <div className="instruction-box">
-              {status === "loading" && <h3>Loading...</h3>}
-              {status === "error" && <h3>Error...</h3>}
-              {data?.error && <h3>Error...</h3>}
-              <div>{data?.name}</div>
-              <div>{data?.species}</div>
+              <h3 className="instruction-box__title">React Query</h3>
+              <p>Easily manage HTTP requests and their lifecycle. Loading, fetching, error state and data all with caching and deduping.</p>
+              {!rickAndMortyApi.data && !rickAndMortyApi.isFetching && (
+                <button className="fancy-button" onClick={() => rickAndMortyApi.refetch()}>
+                  Load Data
+                </button>
+              )}
+              {!rickAndMortyApiError.isFetching && !rickAndMortyApiError.isError && (
+                <button className="fancy-button" onClick={() => rickAndMortyApiError.refetch()}>
+                  Load Error
+                </button>
+              )}
+
+              {rickAndMortyApi.isFetching && <p>Loading success case...</p>}
+
+              {rickAndMortyApi.data && (
+                <>
+                  <div>{rickAndMortyApi.data.name}</div>
+                  <div>{rickAndMortyApi.data.species}</div>
+                </>
+              )}
+
+              {rickAndMortyApiError.isFetching && <p>Loading error case...</p>}
+              {rickAndMortyApiError.error && <p>{rickAndMortyApiError.error.message}</p>}
             </div>
           </div>
         </div>
