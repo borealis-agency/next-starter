@@ -18,6 +18,8 @@ Clone command assumes you have [Volta](https://volta.sh/) installed. Volta is us
 
 ## Getting Started
 
+Please make sure to follow all steps here. Each step is important to properly set up the project.
+
 ### Clone the template
 
 Clone the template using [create-next-app](https://www.npmjs.com/package/create-next-app)
