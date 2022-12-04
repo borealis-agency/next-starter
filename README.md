@@ -17,7 +17,7 @@ Clone command assumes you have [Volta](https://volta.sh/) installed. Volta is us
 Clone the template using [create-next-app](https://www.npmjs.com/package/create-next-app)
 
 ```bash
-volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/template
+volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/tree/main/template
 ```
 
 > This command will make sure that this template is created using Node.js v18 and npm v9. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
