@@ -4,7 +4,7 @@ Modules are "domain specific" units of code. Instead of dumping all components, 
 
 Module can contain basically every type of resource that root of the project can contain. Consider them like "mini projects" inside this bigger project.
 
-### Requirements
+## Requirements
 
 Module should have a top level `index.ts` file that exports everything that module makes "publicly" available. Even though we cannot really prevent importing any code from a module, we can at least make the imports nicer if everything from a module is exported from top level `index.ts` inside it.
 
