@@ -30,6 +30,8 @@ volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example
 
 > This command will make sure that this template is created using Node.js v18 and npm v9. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
 
+> Ignore commands printed out by this step, they are generic commands from create-next-app. Newly created project has its own documentation.
+
 ### Run initial script
 
 To initialize some packages that cannot be initialized during clone phase, please run this command inside the newly created project folder:
