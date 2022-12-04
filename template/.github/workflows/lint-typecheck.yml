@@ -15,12 +15,11 @@ on:
 
 jobs:
   check:
-    name: Lint on ${{ matrix.os }} using Node.js v${{ matrix.node-version }}
+    name: Lint on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [16.x]
     if: ${{ github.event_name == 'pull_request' }}
     steps:
         # Checkout code from repo
@@ -30,10 +29,10 @@ jobs:
           fetch-depth: 0
 
         # Setup Node.js to be used inside this runner
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: "package.json"
           cache: "npm"
           cache-dependency-path: package-lock.json
 
