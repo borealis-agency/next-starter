@@ -41,3 +41,7 @@ node scripts/postClone.mjs
 ```
 
 And that's it, further instructions are contained inside the folder you just created with this command.
+
+## Allow VSCode to use specific Typescript version
+
+When opening the generated project inside VSCode for the first time, VSCode might ask to use project specific Typescript version. Please click "Allow" if you see this popup.
