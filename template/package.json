@@ -8,7 +8,6 @@
     "lint:js": "next lint",
     "lint:js:report": "eslint --output-file eslint_report.json --format json",
     "lint:styles": "npx stylelint \"**/*.{css,scss,sass}\"",
-    "prepare": "husky install",
     "packagecheck": "npx --yes package-changed",
     "dev:next": "next dev",
     "dev:path": "pathpida --enableStatic --ignorePath .gitignore --watch",

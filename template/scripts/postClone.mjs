@@ -1,0 +1,42 @@
+import { exec, spawnSync } from "child_process";
+import { existsSync, writeFileSync } from "fs";
+import { createRequire } from "module";
+import path from "path";
+
+import { ensureFolderExists, projectRootFolder } from "./utility.mjs";
+
+const huskyFolderPath = path.resolve(projectRootFolder, ".husky");
+const preCommitHookPath = path.resolve(huskyFolderPath, "pre-commit");
+const isHuskyPreCommitPresent = existsSync(preCommitHookPath);
+
+if (isHuskyPreCommitPresent) {
+  console.log();
+  console.log("husky pre-commit hook seems to be installed already. That means you probably ran this script before. No files were created or updated now.");
+  console.log();
+} else {
+  const require = createRequire(import.meta.url);
+  const packageJsonPath = path.resolve(projectRootFolder, "package.json");
+  const packageJsonData = require(packageJsonPath);
+  packageJsonData.scripts["prepare"] = "husky install";
+
+  ensureFolderExists(huskyFolderPath);
+  writeFileSync(
+    preCommitHookPath,
+    `#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+`,
+    { encoding: "utf-8" }
+  );
+  writeFileSync(packageJsonPath, JSON.stringify(packageJsonData, null, 2) + "\n", { encoding: "utf-8" });
+  spawnSync("npm", ["install"], {
+    cwd: projectRootFolder,
+    stdio: [process.stdin, process.stdout, process.stderr],
+    encoding: "utf-8",
+  });
+
+  console.log();
+  console.log("Post clone script successfully completed!");
+  console.log();
+}

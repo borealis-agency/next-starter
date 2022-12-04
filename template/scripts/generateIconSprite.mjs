@@ -2,10 +2,9 @@ import fs from "fs";
 import glob from "glob";
 import path from "path";
 import SVGSpriter from "svg-sprite";
-import { fileURLToPath } from "url";
 
-const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
-const projectRootFolder = path.resolve(currentDirectory, "../");
+import { appendToFileOnce, currentDirectory, ensureFolderExists, projectRootFolder } from "./utility.mjs";
+
 const sourceIconsFolder = path.resolve(projectRootFolder, "./icons");
 
 /**
@@ -24,44 +23,9 @@ const getFullyCleanIconName = (iconFilePath) => getSvgFileName(iconFilePath).rep
 const getAllSvgFilesPaths = () => glob.sync("./icons/**/*.svg");
 
 /**
- * Check if folder exists, if it doesn't create it.
- */
-const ensureFolderExists = (folderPath) => {
-  if (!fs.existsSync(folderPath)) {
-    fs.mkdirSync(folderPath);
-  }
-};
-
-/**
- * Check if file exists, if it doesn't create it.
- */
-const ensureFileExists = (filePath) => {
-  let didItExist = true;
-
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, "");
-    didItExist = false;
-  }
-
-  return didItExist;
-};
-
-/**
  * Generate Typescript string literal type from an array of strings.
  */
 const generateStringLiteralType = (stringArray) => stringArray.map((item) => `"${item}"`).join(" | ");
-
-/**
- * Append a line of text to a file only if that file doesn't already contain that line of text. If file doesn't exist, it will be created.
- */
-const appendToFileOnce = (file, content) => {
-  const didFileExist = ensureFileExists(file);
-  const fileContents = fs.readFileSync(file);
-
-  if (!fileContents.includes(content)) {
-    fs.writeFileSync(file, `${fileContents}${didFileExist ? "\n" : ""}${content}`);
-  }
-};
 
 /**
  * Compile SVG sprite and return the name of the file created.
