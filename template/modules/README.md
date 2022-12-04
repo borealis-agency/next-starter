@@ -4,7 +4,7 @@ Modules are "domain specific" units of code. Instead of dumping all components, 
 
 Module can contain basically every type of resource that root of the project can contain. Consider them like "mini projects" inside this bigger project.
 
-## Requirements
+### Requirements
 
 Module should have a top level `index.ts` file that exports everything that module makes "publicly" available. Even though we cannot really prevent importing any code from a module, we can at least make the imports nicer if everything from a module is exported from top level `index.ts` inside it.
 
@@ -20,7 +20,7 @@ Assets are exluded from this since assets inside a module are usually used withi
 
 ## Structure
 
-Modules should follow the structure of the root of the project. Since these are "mini projects", they can contain their own assets, components, constants, types etc.
+Modules should (mostly) follow the structure of the root of the project. Since these are "mini projects", they can contain their own assets, components, constants, types etc.
 
 Here is a simple directory structure example of an "authentication" module that should contain code regarding user login, registration etc.
 
@@ -31,35 +31,31 @@ Here is a simple directory structure example of an "authentication" module that 
     │   │   └── images/
     │   │       └── user-avatar-placeholder.png
     │   ├── constants/
-    │   │   ├── index.ts
     │   │   └── login.ts
     │   ├── components/
     │   │   ├── LoginForm/
-    │   │   │   ├── index.ts
     │   │   │   ├── LoginForm.module.scss
     │   │   │   └── LoginForm.tsx
     │   │   └── RegisterForm/
-    │   │       ├── index.ts
     │   │       ├── RegisterForm.module.scss
     │   │       └── LoginForm.tsx
     │   ├── hooks/
-    │   │   ├── index.ts
     │   │   └── useCurrentUserRole.ts
     │   ├── types/
-    │   │   ├── index.ts
     │   │   └── login.ts
     │   └── index.ts
     └── other-module/
         ├── components/
         │   └── ComponentName/
-        │       ├── index.ts
         │       ├── ComponentName.module.scss
         │       ├── ComponentName.tsx
-        │       └── ...
+        │       ...
         └── index.ts
 ```
 
 > This example includes some random "other-module" as well just to showcase that each module has same structure, but doesn't need to have all the same folders if it doesn't require particular resource (asset, component, type etc.)
+
+Please note that folders such as `/constants` and `/types` don't have an `index.ts` file inside them. This is in contrast to root project structure where each of these folders should have its own `index.ts` file to provide nicer imports. Modules don't require this because modules have their own top level `index.ts` from which they should export everything they want to expose "publicly".
 
 ## Generators
 
