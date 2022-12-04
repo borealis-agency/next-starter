@@ -70,7 +70,7 @@ Only component generator is available at the moment for modules. If any other ty
 To generate a component inside a specific module, run this command. Make sure to name the module with all lowercase letters and name the component using PascalCase.
 
 ```bash
-npx hygen module-component new modulename/ComponentName
+npx hygen component module modulename/ComponentName
 ```
 
 > This command will create the required module folder if it doesn't exist yet.
@@ -78,5 +78,5 @@ npx hygen module-component new modulename/ComponentName
 If module name contains multiple words (e.g. image editor, video processing), it should be named with hyphens in this generator command:
 
 ```bash
-npx hygen module-component new module-name/ComponentName
+npx hygen component module module-name/ComponentName
 ```

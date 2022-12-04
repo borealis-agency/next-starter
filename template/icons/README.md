@@ -17,7 +17,7 @@ npm run generate:iconsprite
 Second, generate the Icon component that will actually use that SVG sprite:
 
 ```bash
-npx hygen icon-component new
+npx hygen component icon
 ```
 
 And that's it! You can style your newly created Icon component how you wish and it should be ready to go.

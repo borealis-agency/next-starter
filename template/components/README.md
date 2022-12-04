@@ -13,7 +13,7 @@ There are couple of generators available for components.
 To generate common component, run this command. Make sure to name the component using PascalCase as you would usually name a React component.
 
 ```bash
-npx hygen component new ComponentName
+npx hygen component shared ComponentName
 ```
 
 This will generate a component inside `/components` folder. Just remove few lines of boilerplate code and you are good to go!
