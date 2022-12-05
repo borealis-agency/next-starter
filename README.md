@@ -8,7 +8,7 @@ If you wish to use the template, feel free to do it, but it might have things ba
 
 ## Repo structure
 
-Template that is actually cloned is inside `/template` folder. This is done on purpose to split the general instructions for "cloning" this template and actual instructions you'll need when project is bootstrapped. Mixing these two instructions might cause confusion so splitting them made sense.
+Template that is actually used for new project initialization is inside `/template` folder. This is done on purpose to split the general instructions for using this template generator and actual instructions you'll need when project is bootstrapped. Mixing these two instructions might cause confusion so splitting them made sense.
 
 ## Requirements
 
@@ -20,19 +20,23 @@ Clone command assumes you have [Volta](https://volta.sh/) installed. Volta is us
 
 Please make sure to follow all steps here. Each step is important to properly set up the project.
 
-### Clone the template
+### Create you project
 
-Clone the template using [create-next-app](https://www.npmjs.com/package/create-next-app)
+Just run this single command to start. There is no need to create project folder before starting or anything else. Just run this in a folder where you want the project folder to be created.
+
+Create project with this template using [create-next-app](https://www.npmjs.com/package/create-next-app) command: 
 
 ```bash
 volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/tree/main/template
 ```
 
+This will ask you for your project name and will create a folder with that name for you. If you have a project called "Petfood Webshop", just type "petfood-webshop" and that folder will automatically be created.
+
 > This command will make sure that this template is created using Node.js v18 and npm v9. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
 
 > Ignore commands printed out by this step, they are generic commands from create-next-app. Newly created project has its own documentation.
 
-### Run initial script
+### Run initial setup script
 
 To initialize some packages that cannot be initialized during clone phase, please run this command inside the newly created project folder:
 
