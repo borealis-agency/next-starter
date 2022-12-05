@@ -20,7 +20,7 @@ Project generator command assumes you have [Volta](https://volta.sh/) installed.
 
 Please make sure to follow all steps here. Each step is important to properly set up the project.
 
-### Create you project
+### Create your project
 
 Just run this single command to start. There is no need to create project folder before starting or anything else. Just run this in a folder where you want the project folder to be created.
 
