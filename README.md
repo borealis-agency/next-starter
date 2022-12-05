@@ -12,7 +12,7 @@ Template that is actually used for new project initialization is inside `/templa
 
 ## Requirements
 
-Clone command assumes you have [Volta](https://volta.sh/) installed. Volta is used for easy Node.js and npm version management and the ability to run this command with appropriate Node.js and npm versions.
+Project generator command assumes you have [Volta](https://volta.sh/) installed. Volta is used for easy Node.js and npm version management and the ability to run this command with appropriate Node.js and npm versions.
 
 > If you don't have Volta installed, please make sure you are using Node.js v18 and npm v9 when "cloning" this template. Volta is still highly advised because it makes all of this way easier.
 
@@ -38,7 +38,7 @@ This will ask you for your project name and will create a folder with that name 
 
 ### Run initial setup script
 
-To initialize some packages that cannot be initialized during clone phase, please run this command inside the newly created project folder:
+To initialize some packages that cannot be initialized during initial generator phase, please run this command inside the newly created project folder:
 
 ```bash
 node scripts/postClone.mjs
