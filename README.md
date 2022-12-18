@@ -24,7 +24,7 @@ Please make sure to follow all steps here. Each step is important to properly se
 
 Just run this single command to start. There is no need to create project folder before starting or anything else. Just run this in a folder where you want the project folder to be created.
 
-Create project with this template using [create-next-app](https://www.npmjs.com/package/create-next-app) command: 
+Create project with this template using [create-next-app](https://www.npmjs.com/package/create-next-app) command:
 
 ```bash
 volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/tree/main/template
@@ -38,11 +38,13 @@ This will ask you for your project name and will create a folder with that name 
 
 ### Run initial setup script
 
-To initialize some packages that cannot be initialized during initial generator phase, please run this command inside the newly created project folder:
+To initialize some packages that (sometimes) cannot be initialized during initial generator phase, please run this command inside the newly created project folder:
 
 ```bash
-node scripts/postClone.mjs
+node scripts/initialSetup.mjs
 ```
+
+> This script should be ran only once after the project is created.
 
 And that's it, further instructions are contained inside the folder you just created with this command.
 
