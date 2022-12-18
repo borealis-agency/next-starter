@@ -33,16 +33,16 @@ const generateStringLiteralType = (stringArray) => stringArray.map((item) => `"$
 const compileSvgSprite = (spriterInstance) => {
   return new Promise((resolve) => {
     spriterInstance.compile((_err, result, data) => {
-      for (const type in result.defs) {
-        if (Object.hasOwnProperty.call(result.defs, type)) {
-          const element = result.defs[type];
+      for (const type in result.symbol) {
+        if (Object.hasOwnProperty.call(result.symbol, type)) {
+          const element = result.symbol[type];
 
           fs.mkdirSync(path.dirname(element.path), { recursive: true });
           fs.writeFileSync(element.path, element.contents);
         }
       }
 
-      resolve(data.defs.sprite);
+      resolve(data.symbol.sprite);
     });
   });
 };
@@ -71,7 +71,8 @@ ${redundantNamedIcons.join("\n")}
 const spriter = new SVGSpriter({
   dest: "./public/icon-sprite",
   mode: {
-    defs: {
+    symbol: {
+      inline: true,
       dest: "",
       example: {
         dest: "icon-symbols-example.html",
