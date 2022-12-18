@@ -11,7 +11,7 @@ type IconProps = {
 };
 
 export const Icon = ({ name }: IconProps) => {
-  const iconURL = `${ICONS_SPRITE_URL}#icon-${name}`;
+  const iconURL = `${ICONS_SPRITE_URL}#${name}`;
 
   return (
     <svg className={styles.icon}>
