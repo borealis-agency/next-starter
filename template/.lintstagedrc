@@ -4,7 +4,6 @@
     "prettier --write"
   ],
   "*{.css,.scss}": [
-    "prettier --write",
-    "stylelint --fix"
+    "prettier --write"
   ]
 }
