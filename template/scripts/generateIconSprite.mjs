@@ -70,6 +70,25 @@ ${redundantNamedIcons.join("\n")}
 
 const spriter = new SVGSpriter({
   dest: "./public/icon-sprite",
+  shape: {
+    transform: [
+      {
+        svgo: {
+          plugins: [
+            // Use default preset for optimization
+            "preset-default",
+            // Override "removeAttrs" plugin to remove stroke and fill attributes to allow icons to be colored through CSS
+            {
+              name: "removeAttrs",
+              params: {
+                attrs: "*:(stroke|fill)*",
+              },
+            },
+          ],
+        },
+      },
+    ],
+  },
   mode: {
     symbol: {
       inline: true,
