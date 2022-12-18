@@ -118,3 +118,7 @@ export type TIconName = ${generateStringLiteralType(allIconNames)};
 `
 );
 appendToFileOnce(path.resolve(typesFolderPath, "index.ts"), 'export * from "./icon-sprite";');
+
+console.log();
+console.log("Icon sprite created!");
+console.log();
