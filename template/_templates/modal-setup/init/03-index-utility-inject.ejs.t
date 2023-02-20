@@ -1,8 +1,8 @@
 ---
 inject: true
-to: utility/index.ts
+to: components/index.ts
 append: true
-skip_if: ./modalRegister;
+skip_if: Modal/registerModalDialog
 eof_last: false
 ---
-export * from "./modalRegister";
+export * from "./Modal/registerModalDialog";
