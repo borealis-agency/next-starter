@@ -23,3 +23,11 @@ This will generate a component inside `/components` folder. Just remove few line
 Since this component is a bit special and dependant on custom SVG sprite generator, it's handled as a special case and has its own generator.
 
 Refer to documentation in `/icons` folder for more details on how to create a dedicated Icon component.
+
+### Modal manager
+
+To set up [nice-modal-react](https://github.com/eBay/nice-modal-react) as a modal manager, you can run a single command:
+
+```bash
+npx hygen modal-setup init
+```

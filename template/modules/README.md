@@ -14,9 +14,7 @@ This allows us to have nice imports like this:
 import { MyComponent, SomeType } from "@/modules/module-name";
 ```
 
-Each subfolder (except `/assets`) inside a module should have a top level `index.ts` file that re-exports everything contained within it.
-
-Assets are exluded from this since assets inside a module are usually used within that module only. If an asset is required in other places, then it should be moved inside top level `/assets` folder. Same goes for other types of resources (components, constants, types etc.). If they are required in multiple modules, they should be moved inside the root of the project. Modules ideally shouldn't import resources from other modules.
+If any part of module (component, constant, type, asset etc.) is required in other modules or shared components for example, then it should be moved inside top level folder for that type of file (`/components`, `/constants`, `/types`, `/assets` etc.). Modules ideally shouldn't import resources from other modules since those are then shared resources.
 
 ## Structure
 
