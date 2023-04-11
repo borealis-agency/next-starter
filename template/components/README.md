@@ -10,7 +10,7 @@ There are couple of generators available for components.
 
 ### Component
 
-To generate common component, run this command. Make sure to name the component using PascalCase as you would usually name a React component.
+To generate common (shared) component, run this command. Make sure to name the component using PascalCase as you would usually name a React component.
 
 ```bash
 npx hygen component shared ComponentName
