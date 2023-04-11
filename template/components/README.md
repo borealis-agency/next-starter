@@ -31,3 +31,7 @@ To set up [nice-modal-react](https://github.com/eBay/nice-modal-react) as a moda
 ```bash
 npx hygen modal-setup init
 ```
+
+Make sure to wrap the app inside `NiceModal.Provider` after in order to be able to use modal manager https://github.com/eBay/nice-modal-react#embed-your-application-with-nicemodalprovider
+
+> Actual UI Modal implementation has to be handled separately. This just creates certain Modal helpers.
