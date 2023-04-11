@@ -44,6 +44,6 @@ npx lint-staged
   spawnSync("git", ["commit", "-m", "Initialize git hooks using husky"]);
 
   console.log();
-  console.log("Post clone script successfully completed!");
+  console.log("Initial setup script successfully completed!");
   console.log();
 }

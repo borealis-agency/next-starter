@@ -4,8 +4,6 @@ This is a [Next.js](https://nextjs.org/) project created with [Borealis Next.js 
 
 Make sure you have [Volta](https://volta.sh/) installed in order to automatically use proper Node.js and npm versions while working on the project.
 
-Volta is also used to clone this project with proper Node.js and npm versions
-
 All commands in any of the documentation in this project are ran from this project root, unless specified otherwise!
 
 ## Getting Started
