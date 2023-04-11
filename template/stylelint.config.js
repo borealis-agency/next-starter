@@ -3,11 +3,11 @@ module.exports = {
   overrides: [
     {
       files: ["**/*.{css}"],
-      extends: ["stylelint-config-standard", "stylelint-config-prettier"],
+      extends: ["stylelint-config-standard"],
     },
     {
       files: ["**/*.{scss}"],
-      extends: ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+      extends: ["stylelint-config-standard-scss"],
       rules: {
         "scss/double-slash-comment-empty-line-before": [
           "always",
