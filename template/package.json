@@ -35,7 +35,7 @@
     "eslint-config-next": "13.3.0",
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.27.5",
-    "glob": "10.0.0",
+    "glob": "8.1.0",
     "husky": "8.0.3",
     "hygen": "6.2.11",
     "lint-staged": "13.2.1",
