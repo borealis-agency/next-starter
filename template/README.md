@@ -14,9 +14,9 @@ To get the project running, just run the development server:
 npm run dev
 ```
 
-> This will install npm dependencies if needed. No need to manually install them.
+> This will automatically install npm dependencies and start the development server.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Run this first and check it out, then go through the rest of this documentation.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Documentation
 
