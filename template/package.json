@@ -5,8 +5,8 @@
   "scripts": {
     "build": "npm run packagecheck && pathpida --enableStatic --ignorePath .gitignore && next build",
     "start": "next start",
-    "lint:js": "next lint",
-    "lint:js:report": "eslint --output-file eslint_report.json --format json",
+    "lint:js": "npx eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./",
+    "lint:js:report": "npm run lint:js -- --output-file eslint_report.json --format json",
     "lint:styles": "npx stylelint \"**/*.{css,scss,sass}\"",
     "packagecheck": "npx --yes package-changed",
     "dev:next": "next dev",
