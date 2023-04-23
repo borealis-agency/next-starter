@@ -29,7 +29,7 @@ module.exports = {
     "react/no-unescaped-entities": "off",
     // Prevents accidental double imports that might sometime occur with auto import
     "no-duplicate-imports": "error",
-    // Turn of this JavaScript no-unused-vars in order no to trigger false positives in TypeScript code
+    // Turn of this JavaScript no-unused-vars in order not to trigger false positives in TypeScript code
     "no-unused-vars": "off",
     "no-useless-rename": [
       "error",
