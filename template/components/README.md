@@ -8,7 +8,7 @@ These should be the more common building blocks and them modules should have mor
 
 There are couple of generators available for components.
 
-### Component
+### Shared component
 
 To generate common (shared) component, run this command. Make sure to name the component using PascalCase as you would usually name a React component.
 
