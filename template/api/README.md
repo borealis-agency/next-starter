@@ -24,7 +24,7 @@ For example, for an endpoint `/users/projects`, the desired way to use the API c
 
 ### SSL errors while generating API client configuration
 
-If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an additional flag needs to be passed to `swagger-typescript-api`. Update `generate:api` script by adding `--disableStrictSSL flag as another argument.
+If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an additional flag needs to be passed to `swagger-typescript-api`. Update `generate:api` script by adding `--disableStrictSSL` flag as another argument.
 
 ## Using generated API client
 
