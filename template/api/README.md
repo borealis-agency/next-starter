@@ -30,7 +30,7 @@ If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an 
 
 Now that the API client is generated, we need to create an instance of it in order to use it inside the app.
 
-Create a new file `/api/index.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
+Create a new file `/api/api-client.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
 
 ```ts
 import { Api } from "./api-generated";
@@ -40,6 +40,32 @@ export const ApiClient = new Api();
 
 That's it, you new API client should be ready to use with autocomplete features and typesafety provided by TypeScript.
 
+Make sure to export ApiClient and whole `api-generated.ts` file from `/api/index.ts` file in order to get nice imports like `import { ApiClient, UserListType } from "@/api"`;
+
+```ts
+// index.ts
+export * from "./api-generated";
+export * from "./api-client";
+```
+
 ## Managing API calls
 
 For managing API calls, their lifecycle, loading/error states as well as data, make sure to use [TanStack Query](https://tanstack.com/query), formerly known as React Query.
+
+### Manual API calls
+
+If for some reason you have to use API client directly without TanStack Query, for example in [NextAuth/Auth.js](https://authjs.dev/) callbacks where you don't have the TanStack Query client available, make sure to handle errors properly as well. There is an `isRequestError` method available on the generated `Api` client class which you can use to determine if the error in try/catch is actually a request error thrown by `axios`.
+
+```ts
+import { ApiClient } from "@/api";
+
+try {
+  const response = ApiClient.users.usersList();
+} catch (error) {
+  if (ApiClient.isRequestError(error)) {
+    // axios will throw an error for any request that is not 2xx status
+    // This `isRequestError` check guarantees that the error is an actual axios thrown error and not some other runtime error and it makes sure that you will have proper TypeScript types in this block
+    // Use this to check exact status code if you need to respond a specific way to a specific status code
+  }
+}
+```
