@@ -11,7 +11,7 @@ For first time setup, there are few steps that are required
 First, generate the SVG sprite by using this command:
 
 ```bash
-npm run generate:iconsprite
+npm run generate:icons
 ```
 
 Second, generate the Icon component that will actually use that SVG sprite:
@@ -27,7 +27,7 @@ And that's it! You can style your newly created Icon component how you wish and 
 If you added a new icon and just want to update existing icon set, just run this command:
 
 ```bash
-npm run generate:iconsprite
+npm run generate:icons
 ```
 
 This will re-generate the icon set by creating new sprite SVG file and updating appropriate types and file paths where needed.
