@@ -23,10 +23,6 @@ export interface FullRequestParams extends Omit<AxiosRequestConfig, "data" | "pa
 
 export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
 
-export type ApiErrorDefaultResponse = {
-  message: string
-}
-
 export interface ApiConfig<SecurityDataType = unknown> extends Omit<AxiosRequestConfig, "data" | "cancelToken"> {
   securityWorker?: (securityData: SecurityDataType | null) => Promise<AxiosRequestConfig | void> | AxiosRequestConfig | void;
   secure?: boolean;
@@ -143,7 +139,7 @@ export class HttpClient<SecurityDataType = unknown> {
     /**
      * Check whether specific error is error returned by `axios`.
      */
-    public isRequestError(payload: any): payload is AxiosError<ApiErrorDefaultResponse> {
+    public isRequestError(payload: any): payload is AxiosError {
       return axios.isAxiosError(payload);
     }
 }
