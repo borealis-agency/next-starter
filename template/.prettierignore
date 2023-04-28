@@ -3,4 +3,7 @@
 /dist
 /coverage
 api/**/client.ts
+api/**/api-generated.ts
 /lib/$*.ts
+.next
+.github
