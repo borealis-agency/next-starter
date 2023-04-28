@@ -11,7 +11,7 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "importOrder": ["^@components", "^@modules", "^[./]"],
+  "importOrder": ["<THIRD_PARTY_MODULES>", "^@/", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
