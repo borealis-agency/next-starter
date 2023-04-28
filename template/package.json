@@ -12,7 +12,7 @@
     "dev:next": "next dev",
     "dev:path": "pathpida --enableStatic --ignorePath .gitignore --watch",
     "dev": "npm run packagecheck && concurrently \"npm:dev:*\"",
-    "generate:iconsprite": "node scripts/generateIconSprite.mjs && pathpida --enableStatic --ignorePath .gitignore",
+    "generate:icons": "node scripts/generateIconSprite.mjs && pathpida --enableStatic --ignorePath .gitignore",
     "generate:api": "npx --yes swagger-typescript-api@12.0.4 --axios -r --module-name-index 1 -p __SWAGGER_JSON_URL_HERE__ -o ./api -n api-generated.ts"
   },
   "dependencies": {
