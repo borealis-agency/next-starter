@@ -33,7 +33,7 @@ Now that the API client is generated, we need to create an instance of it in ord
 Create a new file `/api/index.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
 
 ```ts
-import { Api } from "./api-generated.ts";
+import { Api } from "./api-generated";
 
 export const ApiClient = new Api();
 ```
