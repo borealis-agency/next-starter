@@ -1,4 +1,4 @@
 ---
-to: modules/<%= moduleName %>/index.ts
+to: src/modules/<%= moduleName %>/index.ts
 unless_exists: true
 ---

@@ -16,13 +16,13 @@ To generate common (shared) component, run this command. Make sure to name the c
 npx hygen component shared ComponentName
 ```
 
-This will generate a component inside `/components` folder. Just remove few lines of boilerplate code and you are good to go!
+This will generate a component inside `/src/components` folder. Just remove few lines of boilerplate code and you are good to go!
 
 ### Icon component
 
 Since this component is a bit special and dependant on custom SVG sprite generator, it's handled as a special case and has its own generator.
 
-Refer to documentation in `/icons` folder for more details on how to create a dedicated Icon component.
+Refer to documentation in `/src/icons` folder for more details on how to create a dedicated Icon component.
 
 ### Modal manager
 

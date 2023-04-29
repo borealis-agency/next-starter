@@ -1,5 +1,5 @@
 ---
-to: components/Icon/Icon.tsx
+to: src/components/Icon/Icon.tsx
 ---
 import { ICONS_SPRITE_URL } from "@/constants";
 import { TIconName } from "@/types";

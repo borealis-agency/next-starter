@@ -1,5 +1,5 @@
 ---
-to: hooks/<%= h.changeCase.camel(name) %>.ts
+to: src/hooks/<%= h.changeCase.camel(name) %>.ts
 ---
 // TODO: Remove this type if this custom hook does not require any arguments
 type <%= h.changeCase.pascal(name) %>Options = {

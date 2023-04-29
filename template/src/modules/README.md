@@ -53,7 +53,7 @@ Here is a simple directory structure example of an "authentication" module that 
 
 > This example includes some random "other-module" as well just to showcase that each module has same structure, but doesn't need to have all the same folders if it doesn't require particular resource (asset, component, type etc.)
 
-Please note that folders such as `/constants` and `/types` don't have an `index.ts` file inside them. This is in contrast to root project structure where each of these folders should have its own `index.ts` file to provide nicer imports. Modules don't require this because modules have their own top level `index.ts` from which they should export everything they want to expose "publicly".
+Please note that folders such as `/constants` and `/types` don't have an `index.ts` file inside them. This is in contrast to root (`/src`) project structure where each of these folders should have its own `index.ts` file to provide nicer imports. Modules don't require this because modules have their own top level `index.ts` from which they should export everything they want to expose "publicly".
 
 ## Generators
 

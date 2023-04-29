@@ -1,6 +1,6 @@
 ---
 inject: true
-to: hooks/index.ts
+to: src/hooks/index.ts
 append: true
 skip_if: ./<%= name %>;
 eof_last: false

@@ -1,4 +1,4 @@
 ---
-to: hooks/index.ts
+to: src/hooks/index.ts
 unless_exists: true
 ---

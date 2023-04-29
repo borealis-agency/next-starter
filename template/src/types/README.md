@@ -14,7 +14,7 @@ This allows us to have nice imports like this:
 import { CustomType, CustomEnum } from "@/types";
 ```
 
-Name type files by domain they belong to (e.g. user.ts, project.ts).
+Name type files by domain they belong to (e.g. `user.ts`, `project.ts`).
 
 Type files can contain multiple type definitions.
 
@@ -23,14 +23,14 @@ Type files can contain multiple type definitions.
 Here is a small example for a theoretical `user.ts` file:
 
 ```ts
-type UserPersonalInformation = {
+type UserPersonalInformationType = {
   firstName: string;
   lastName: string;
   age: number;
 };
 
-export type User = {
+export type UserType = {
   email: string;
-  personalInfo: UserPersonalInformation;
+  personalInfo: UserPersonalInformationType;
 };
 ```

@@ -1,6 +1,6 @@
 # Icons
 
-SVG icons that are used for generating icons SVG sprite go here. Other SVG icons that might not be appropriate for an icon set go into `/assets`.
+SVG icons that are used for generating icons SVG sprite go here. Other SVG icons that might not be appropriate for an icon set go into `/src/assets`.
 
 Name these SVG files without `icon` or `icon-` in their name. So instead of naming the file `icon-share.svg`, it should just be `share.svg`. Using "icon" in the name of these icons is redundant and messes up later code generation and icon usage in code.
 

@@ -1,5 +1,5 @@
 ---
-to: components/Icon/Icon.module.scss
+to: src/components/Icon/Icon.module.scss
 ---
 .icon {
   min-height: 1em;

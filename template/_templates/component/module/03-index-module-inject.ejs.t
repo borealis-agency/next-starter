@@ -1,6 +1,6 @@
 ---
 inject: true
-to: modules/<%= moduleName %>/index.ts
+to: src/modules/<%= moduleName %>/index.ts
 append: true
 skip_if: ./<%= componentName %>;
 eof_last: false

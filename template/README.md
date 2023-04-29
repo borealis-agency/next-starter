@@ -24,17 +24,26 @@ Make sure to read this main README file as well as different README files that a
 
 To avoid documentation duplication (and it going out of sync), where appropriate, this main README will point out other docs that should be read for a particular section.
 
+## Source code
+### Application source code
+
+Application source code is placed in `/src` folder in order to isolate it from other development or repository only code. This allows you to easily focus on a single folder with application specific code, but it also allows tools to target this folder specifically for tasks such as linting in order to reduce the scope of work those tools have to do. Imagine a tool like ESLint or Prettier just running on `/src` folder instead of running through all code in a repository.
+
+### Repository utility code
+
+Repository specific utility code lives in the root of the repository. This is in order not to mix it too much with application code.
+
 ## Generators
 
 This project comes with code generators that are created using [Hygen](https://github.com/jondot/hygen). This allows us to generate components, modules and other things by using simple commands. They help you get started working faster on your code without worrying about creating files, re-exporting files where needed and whatever else you might need to do when creating these common chunks of code.
 
 ### Component
 
-Check documentation inside `/components` folder.
+Check documentation inside `/src/components` folder.
 
 ### Modules
 
-Check documentation inside `/modules` folder.
+Check documentation inside `/src/modules` folder.
 
 ### Caveats
 
@@ -46,7 +55,7 @@ In case some generator is required, feel free to create it using [Hygen](https:/
 
 ## Icons
 
-Check documentation inside `/icons` folder.
+Check documentation inside `/src/icons` folder.
 
 ## Miscellaneous
 

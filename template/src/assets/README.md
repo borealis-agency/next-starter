@@ -4,7 +4,7 @@ This folder should contain static assets such as images, videos and font files.
 
 ## Images
 
-All images such as illustrations, logos, background images belong here. Make sure to organize them by domain they belong to. For example if you have a row of customer logos, you can add them into `/assets/customers` folder to group them together.
+All images such as illustrations, logos, background images belong here. Make sure to organize them by domain they belong to. For example if you have a row of customer logos, you can add them into `/src/assets/customers` folder to group them together.
 
 ## Videos
 
@@ -12,7 +12,7 @@ Videos are more rare compared to images, but if video assets are used inside the
 
 ## Fonts
 
-If custom fonts are used inside the app, those belong in `/assets/fonts/%font_name%` folder in order to group these files by font family. Make sure to optimize fonts by using WOFF2 format.
+If custom fonts are used inside the app, those belong in `/src/assets/fonts/%font_name%` folder in order to group these files by font family. Make sure to optimize fonts by using WOFF2 format.
 
 Use a service like [Transfonter](https://transfonter.org/) or [FontSquirrel](https://www.fontsquirrel.com/tools/webfont-generator) to convert font files from other formats into WOFF2 if needed.
 

@@ -1,6 +1,6 @@
 ---
 inject: true
-to: components/index.ts
+to: src/components/index.ts
 append: true
 skip_if: ./<%= name %>;
 eof_last: false

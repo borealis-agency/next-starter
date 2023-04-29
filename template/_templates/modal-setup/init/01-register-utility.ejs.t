@@ -1,5 +1,5 @@
 ---
-to: components/Modal/registerModalDialog.ts
+to: src/components/Modal/registerModalDialog.ts
 unless_exists: true
 ---
 // DO NOT EDIT IN ANY WAY AFTER INITIAL SETUP STEPS!!

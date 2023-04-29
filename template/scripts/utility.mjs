@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 
 export const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 export const projectRootFolder = path.resolve(currentDirectory, "../");
+export const projectSourceFolder = path.resolve(projectRootFolder, "./src");
 
 /**
  * Check if folder exists, if it doesn't create it.

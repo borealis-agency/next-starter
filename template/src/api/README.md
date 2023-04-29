@@ -30,7 +30,7 @@ If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an 
 
 Now that the API client is generated, we need to create an instance of it in order to use it inside the app.
 
-Create a new file `/api/api-client.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
+Create a new file `/src/api/api-client.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
 
 ```ts
 import { Api } from "./api-generated";
@@ -40,7 +40,7 @@ export const ApiClient = new Api();
 
 That's it, you new API client should be ready to use with autocomplete features and typesafety provided by TypeScript.
 
-Make sure to export ApiClient and whole `api-generated.ts` file from `/api/index.ts` file in order to get nice imports like `import { ApiClient, UserListType } from "@/api"`;
+Make sure to export ApiClient and whole `api-generated.ts` file from `/src/api/index.ts` file in order to get nice imports like `import { ApiClient, UserListType } from "@/api"`;
 
 ```ts
 // index.ts

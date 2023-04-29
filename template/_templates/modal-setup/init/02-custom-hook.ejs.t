@@ -1,5 +1,5 @@
 ---
-to: components/Modal/useModalDialog.tsx
+to: src/components/Modal/useModalDialog.tsx
 unless_exists: true
 ---
 import { NiceModalHandler, useModal } from "@ebay/nice-modal-react";

@@ -3,14 +3,14 @@ import glob from "glob";
 import path from "path";
 import SVGSpriter from "svg-sprite";
 
-import { appendToFileOnce, currentDirectory, ensureFolderExists, projectRootFolder } from "./utility.mjs";
+import { appendToFileOnce, currentDirectory, ensureFolderExists, projectRootFolder, projectSourceFolder } from "./utility.mjs";
 
-const sourceIconsFolder = path.resolve(projectRootFolder, "./icons");
+const sourceIconsFolder = path.resolve(projectSourceFolder, "./icons");
 
 /**
  * Get actual file name of the SVG icon without the relative path before it.
  */
-const getSvgFileName = (iconFilePath) => iconFilePath.replaceAll("./icons/", "");
+const getSvgFileName = (iconFilePath) => iconFilePath.replaceAll("./src/icons/", "");
 
 /**
  * Get fully cleaned up icon name without path data, extension and potential redundant naming.
@@ -20,7 +20,7 @@ const getFullyCleanIconName = (iconFilePath) => getSvgFileName(iconFilePath).rep
 /**
  * Get relative paths of all SVG icon files.
  */
-const getAllSvgFilesPaths = () => glob.sync("./icons/**/*.svg");
+const getAllSvgFilesPaths = () => glob.sync("./src/icons/**/*.svg");
 
 /**
  * Generate Typescript string literal type from an array of strings.
@@ -49,7 +49,7 @@ const compileSvgSprite = (spriterInstance) => {
 
 // Remove existing icon sprite folder so that we don't commit multiple SVG sprite files.
 // Only one icon sprite file should exist in the project
-fs.rmSync(path.resolve(projectRootFolder, "public/icon-sprite"), { recursive: true, force: true });
+fs.rmSync(path.resolve(projectRootFolder, "./public/icon-sprite"), { recursive: true, force: true });
 
 const allFilePaths = getAllSvgFilesPaths();
 
@@ -103,10 +103,12 @@ const spriter = new SVGSpriter({
 });
 
 for (const iconRelativePath of allFilePaths) {
-  spriter.add(path.resolve(currentDirectory, iconRelativePath), getSvgFileName(iconRelativePath), fs.readFileSync(iconRelativePath, "utf-8"));
+  // Force path to posix (/) paths to match svg-sprite comparison logic
+  const filePath = path.resolve(currentDirectory, "..", iconRelativePath).split(path.sep).join(path.posix.sep);
+  spriter.add(filePath, getSvgFileName(iconRelativePath), fs.readFileSync(iconRelativePath, "utf-8"));
 }
 
-const constantsFolderPath = path.resolve(projectRootFolder, "./constants");
+const constantsFolderPath = path.resolve(projectSourceFolder, "./constants");
 // If constants folder doesn't exist, just create it because we need it to exist when we write our file
 ensureFolderExists(constantsFolderPath);
 
@@ -122,7 +124,7 @@ export const ICONS_SPRITE_URL = "/icon-sprite/${compiledSpriteName}";
 );
 appendToFileOnce(path.resolve(constantsFolderPath, "index.ts"), 'export * from "./icon-sprite";');
 
-const typesFolderPath = path.resolve(projectRootFolder, "./types");
+const typesFolderPath = path.resolve(projectSourceFolder, "./types");
 // If types folder doesn't exists, just create it because we need it to exist when we write our file
 ensureFolderExists(typesFolderPath);
 
