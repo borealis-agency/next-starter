@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run packagecheck && npm run generate:paths && next build",
+    "build": "npm run generate:paths && next build",
     "start": "next start",
     "lint:js": "npx eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src",
     "lint:js:report": "npm run lint:js -- --output-file eslint_report.json --format json",
