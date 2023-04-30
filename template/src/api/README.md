@@ -14,6 +14,8 @@ This command is set up to generate an API client with [axios](https://github.com
 
 Make sure to update that npm script in `package.json` to point to the correct URL for the desired Swagger/OpenAPI JSON by replacing `__SWAGGER_JSON_URL_HERE__` with an actual URL.
 
+If you need to update the API client because backend API was updated, just run this command again.
+
 ### Generating API client configuration with proper structure
 
 Depending on how the API specification is structured, you might need to update `--module-name-index` flag in `generate:api` script.
@@ -22,31 +24,11 @@ Desired behavior for the generated API client is that API endpoints belonging to
 
 For example, for an endpoint `/users/projects`, the desired way to use the API client is to have that endpoint accessible as `ApiClient.users.projectsList()` instead of it being at the root like `ApiClient.projectsList()`. Using "namespaced" groups of API endpoints also prevents potential conflicts that could occur if multiple endpoints with the same name would have to be generated at the root of the API client (e.g. `/users/projects` and `/companies/projects`).
 
+API client generator automatically creates a file `/src/api/api-client.ts` which creates an instance of API client that should be used within the app. If you need to adjust any `axios` settings for that ApiClient, this is the place to do it.
+
 ### SSL errors while generating API client configuration
 
-If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an additional flag needs to be passed to `swagger-typescript-api`. Update `generate:api` script by adding `--disableStrictSSL` flag as another argument.
-
-## Using generated API client
-
-Now that the API client is generated, we need to create an instance of it in order to use it inside the app.
-
-Create a new file `/src/api/api-client.ts` and create an instance of `Api` class that was automatically generated in `api-generated.ts` file.
-
-```ts
-import { Api } from "./api-generated";
-
-export const ApiClient = new Api();
-```
-
-That's it, you new API client should be ready to use with autocomplete features and typesafety provided by TypeScript.
-
-Make sure to export ApiClient and whole `api-generated.ts` file from `/src/api/index.ts` file in order to get nice imports like `import { ApiClient, UserListType } from "@/api"`;
-
-```ts
-// index.ts
-export * from "./api-generated";
-export * from "./api-client";
-```
+If your desired Swagger/OpenAPI documentation is not using SSL (HTTPS), then an additional flag needs to be passed to `swagger-typescript-api`. Update `generate:api` script by adding `--disableStrictSSL` flag as another argument to `swagger-typescript-api` call.
 
 ## Managing API calls
 
