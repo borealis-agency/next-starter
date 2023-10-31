@@ -47,5 +47,11 @@ module.exports = {
       },
     ],
     "no-descending-specificity": null,
+    "length-zero-no-unit": [
+      true,
+      {
+        ignore: ["custom-properties"],
+      },
+    ],
   },
 };
