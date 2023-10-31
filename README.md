@@ -25,7 +25,7 @@ Please make sure to follow all steps here. Each step is important to properly se
 Invoke [create-next-app](https://www.npmjs.com/package/create-next-app) using this command:
 
 ```bash
-volta run --node 18 --npm 9 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/tree/main/template
+volta run --node 20 --npm 10 npx --yes create-next-app@latest --use-npm --example https://github.com/borealis-agency/next-starter/tree/main/template
 ```
 
 This will ask you for your project name and will create a folder with that name for you. If you have a project called "Petfood Webshop", just type "petfood-webshop" and that folder will automatically be created.
