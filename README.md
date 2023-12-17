@@ -30,7 +30,7 @@ volta run --node 20 --npm 10 npx --yes create-next-app@latest --use-npm --exampl
 
 This will ask you for your project name and will create a folder with that name for you. If you have a project called "Petfood Webshop", just type "petfood-webshop" and that folder will automatically be created.
 
-> This command will make sure that this template is created using Node.js v18.x and npm v9.x. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
+> This command will make sure that this template is created using Node.js v20.x and npm v10.x. This is important because this command also installs npm dependencies and we want to install these with proper Node.js and npm versions.
 
 ### Run initial setup script
 
