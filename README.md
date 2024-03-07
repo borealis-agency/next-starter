@@ -14,7 +14,7 @@ Template that is actually used by [create-next-app](https://www.npmjs.com/packag
 
 Project generator command below assumes you have [Volta](https://volta.sh/) installed. Volta is used for easy Node.js and npm version management and the ability to run this command with appropriate Node.js and npm versions.
 
-> If you don't have Volta installed, please make sure you are using Node.js v18.x and npm v9.x when using this template with create-next-app command. Volta is still highly advised because it makes all of this way easier.
+> If you don't have Volta installed, please make sure you are using Node.js v20.x and npm v10.x when using this template with create-next-app command. Volta is still highly advised because it makes all of this way easier.
 
 ## Getting Started
 
