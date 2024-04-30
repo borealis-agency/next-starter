@@ -30,10 +30,10 @@ export default function Home() {
       </style>
 
       <main className="max-w-7xl mx-auto p-5">
-        <h1 className="text-8xl font-bold mb-8">Borealis Next.js Starter</h1>
-        <p className="text-3xl mb-6">Starting template for React projects using Next.js</p>
+        <h1 className="text-4xl md:text-6xl xl:text-8xl font-bold mb-8">Borealis Next.js Starter!</h1>
+        <p className="text-2xl md:text-3xl mb-6">Starting template for React projects using Next.js</p>
         <div className="mb-10">
-          <h2 className="text-4xl font-bold mb-5">Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-5">Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             <div className="border bg-white/10 border-white/30 rounded-lg p-4 shadow-lg transition hover:scale-105">
               <h3 className="text-2xl font-bold mb-6">Tailwind</h3>
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-10">
-          <h2 className="text-4xl font-bold mb-5">First Steps</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-5">First Steps</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             <div className="border bg-white/10 border-white/30 rounded-lg p-4 shadow-lg transition hover:scale-105">
               <h3 className="text-2xl font-bold mb-6">Documentation</h3>
