@@ -13,7 +13,8 @@
 		"dev": "npm run packagecheck && concurrently \"npm:dev:*\"",
 		"generate:paths": "pathpida --enableStatic --ignorePath .gitignore --output ./src/paths",
 		"generate:icons": "node scripts/generateIconSprite.mjs && npm run generate:paths",
-		"generate:api": "npx --yes swagger-typescript-api@12.0.4 --axios -r --module-name-index 1 -p __SWAGGER_JSON_URL_HERE__ -o ./src/api -n api-generated.ts --templates ./swaggerGenerateTemplates && npx hygen api client"
+		"generate:api": "npx --yes swagger-typescript-api@12.0.4 --axios -r --module-name-index 1 -p __SWAGGER_JSON_URL_HERE__ -o ./src/api -n api-generated.ts --templates ./swaggerGenerateTemplates && npx hygen api client",
+		"postinstall": "npx lefthook install"
 	},
 	"dependencies": {
 		"axios": "1.6.8",
