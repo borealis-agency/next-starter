@@ -8,7 +8,7 @@
     "lint:js": "npx eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src",
     "lint:js:report": "npm run lint:js -- --output-file eslint_report.json --format json",
     "packagecheck": "npx --yes package-changed@3.0.0",
-    "dev:next": "next dev",
+    "dev:next": "next dev --turbo",
     "dev:path": "npm run generate:paths -- --watch",
     "dev": "npm run packagecheck && concurrently \"npm:dev:*\"",
     "generate:paths": "pathpida --enableStatic --ignorePath .gitignore --output ./src/paths",
