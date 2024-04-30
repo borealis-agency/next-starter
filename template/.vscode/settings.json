@@ -41,15 +41,6 @@
     "editor.formatOnSave": true,
     "editor.insertSpaces": true
   },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.insertSpaces": true
-  },
-  "stylelint.validate": ["css", "scss"],
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }

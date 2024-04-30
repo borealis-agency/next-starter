@@ -79,8 +79,6 @@ In case you use another code editor, just make sure these integrations/extension
 
 - [ESLint](https://eslint.org/) - checks your JS/TS code and warns you about potential problems
   - it does run on each PR so editor integration isn't necessary, but it's quite helpful to get feedback on your code as early as possible
-- [Stylelint](https://stylelint.io/) - similar to ESLint, but for style code (scss, css etc)
-  - it does run on each PR so editor integration isn't necessary, but it's quite helpful to get feedback on your code as early as possible
 - [Prettier](https://prettier.io/) - formats code. If possible, enable it to run on each file save
   - it does format code during each commit automatically, but it might be helpful to see your code formatted immediately
 

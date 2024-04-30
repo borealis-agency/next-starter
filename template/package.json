@@ -7,7 +7,6 @@
     "start": "next start",
     "lint:js": "npx eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src",
     "lint:js:report": "npm run lint:js -- --output-file eslint_report.json --format json",
-    "lint:styles": "npx stylelint \"./src/**/*.{css,scss,sass}\"",
     "packagecheck": "npx --yes package-changed@3.0.0",
     "dev:next": "next dev",
     "dev:path": "npm run generate:paths -- --watch",
@@ -17,44 +16,41 @@
     "generate:api": "npx --yes swagger-typescript-api@12.0.4 --axios -r --module-name-index 1 -p __SWAGGER_JSON_URL_HERE__ -o ./src/api -n api-generated.ts --templates ./swaggerGenerateTemplates && npx hygen api client"
   },
   "dependencies": {
-    "axios": "1.6.3",
+    "axios": "1.6.8",
     "classnames": "2.3.2",
-    "next": "14.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sharp": "0.32.6"
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sharp": "0.33.3"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
-    "@types/node": "20.8.10",
-    "@types/react": "18.2.33",
-    "@types/react-dom": "18.2.14",
+    "@types/node": "20.12.7",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
+    "autoprefixer": "10.4.19",
     "concurrently": "8.2.2",
     "cross-env": "7.0.3",
     "eslint": "8.52.0",
-    "eslint-config-next": "14.0.4",
+    "eslint-config-next": "14.2.3",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.0",
     "glob": "8.1.0",
     "husky": "8.0.3",
     "hygen": "6.2.11",
-    "lint-staged": "15.0.2",
+    "lint-staged": "15.2.2",
     "package-changed": "3.0.0",
     "pathpida": "0.22.0",
-    "postcss-scss": "4.0.9",
+    "postcss": "8.4.38",
     "prettier": "3.1.1",
-    "sass": "1.69.5",
-    "stylelint": "15.11.0",
-    "stylelint-config-standard": "34.0.0",
-    "stylelint-config-standard-scss": "11.0.0",
-    "svg-sprite": "2.0.2",
-    "typescript": "5.3.3",
-    "typescript-plugin-css-modules": "5.0.2"
+    "svg-sprite": "2.0.4",
+    "tailwindcss": "3.4.3",
+    "typescript": "5.4.5"
   },
   "volta": {
-    "node": "20.9.0",
-    "npm": "10.2.1"
+    "node": "20.12.2",
+    "npm": "10.6.0"
   }
 }
