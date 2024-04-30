@@ -1,9 +1,0 @@
-# Add files here to ignore them from prettier formatting
-
-/dist
-/coverage
-api/**/client.ts
-api/**/api-generated.ts
-/lib/$*.ts
-.next
-.github
