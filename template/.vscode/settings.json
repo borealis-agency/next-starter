@@ -35,5 +35,14 @@
 		"editor.formatOnSave": true
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	//   Not fully supported TW intelisense
+	//   https://cva.style/docs/getting-started/installation
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["mergeClassNames\\(([\\S\\s]*?)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+	]
 }
