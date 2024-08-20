@@ -66,7 +66,7 @@ module.exports = {
         selector: "variable",
         types: ["boolean"],
         format: ["PascalCase"],
-        prefix: ["is", "should", "has", "can", "did", "will"],
+        prefix: ["is", "should", "has", "can", "did", "will", "are"],
         leadingUnderscore: "allow",
       },
       {
@@ -85,7 +85,7 @@ module.exports = {
     "react/boolean-prop-naming": [
       "error",
       {
-        rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+        rule: "^(is|has|should|can|did|will|are)[A-Z]([A-Za-z0-9]?)+",
         message:
           'Boolean props must be prefixed with is/has/should/can/did/will. Prop "{{ propName }}" must be renamed to match this pattern, depending on the context. (e.g. isValid, hasItems)',
       },
