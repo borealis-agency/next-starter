@@ -16,7 +16,7 @@ export const use<%= h.changeCase.pascal(name) %>Query = ({ placeholderProp }: <%
     queryFn: async () => {},
   });
 };
-<% } else if (typeOfHook === "mutation") { %>
+<% } else { %>
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiKeys } from "./apiKeys";
 
