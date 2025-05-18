@@ -40,8 +40,10 @@ jobs:
         run: npm ci --prefer-offline --no-audit
 
         # Lint code using Biome (https://biomejs.dev/)
+        # Disable formatting checks, because we don't want to fail the CI if the code is not formatted. We assume it is formatted because of pre-commit hooks
+        # We specifically use "ci" command from Biome to ensure reporting is done in a CI-friendly way
       - name: Lint code
-        run: npx biome lint --error-on-warnings --files-ignore-unknown=true src/
+        run: npx biome ci --formatter-enabled=false --error-on-warnings --files-ignore-unknown=true src/
         if: ${{ success() || failure() }}
 
         # Run TypeScript to check if types are valid inside the project
