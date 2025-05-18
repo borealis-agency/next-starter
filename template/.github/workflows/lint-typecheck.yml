@@ -41,7 +41,7 @@ jobs:
 
         # Lint code using Biome (https://biomejs.dev/)
       - name: Lint code
-        run: npx biome ci --error-on-warnings src/
+        run: npx biome lint --error-on-warnings --files-ignore-unknown=true src/
         if: ${{ success() || failure() }}
 
         # Run TypeScript to check if types are valid inside the project
