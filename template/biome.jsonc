@@ -10,6 +10,10 @@
 			// Exclusions must come last because Biome processes these in order apparently. Inclusion globs last would negate some of these exclusions before it
 			"src/**/*.tsx",
 			"src/**/*.ts",
+			"global.d.ts",
+			".hygen.js",
+			"next.config.ts",
+			"tailwind.config.ts",
 			"*.json",
 			"*.jsonc",
 			"!dist/**",

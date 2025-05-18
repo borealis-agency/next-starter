@@ -46,3 +46,6 @@ eslint_report.json
 
 # Ignore HTML example of all icons. This doesn't need to be deployed
 public/icon-sprite/icon-symbols-example.html
+
+# This is ignored by next.js default template generator
+next.env.d.ts

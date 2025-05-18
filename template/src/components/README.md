@@ -14,10 +14,10 @@ If you have multiple components that are tied to similar things, feel free to pr
 └── components/
     ├── button.tsx
     ├── checkbox.tsx
-    ├── documents-list.ts
-    ├── input.ts
-    ├── input-numeric.ts
-    ├── typography.ts
+    ├── documents-list.tsx
+    ├── input.tsx
+    ├── input-numeric.tsx
+    ├── typography.tsx
     └── ...
 ```
 

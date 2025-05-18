@@ -36,6 +36,6 @@
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"eslint.enable": false,
+	"typescript.preferences.preferTypeOnlyAutoImports": true,
 	"typescript.preferences.autoImportFileExcludePatterns": ["postcss", "next/router/**", "next/dist/client/router/**", "radix-ui", "react-aria", "recharts"]
 }
