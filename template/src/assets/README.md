@@ -4,7 +4,7 @@ This folder should contain static assets such as images, videos and font files.
 
 ## Images
 
-All images such as illustrations, logos, background images belong here. Make sure to organize them by domain they belong to. For example if you have a row of customer logos, you can add them into `/src/assets/customers` folder to group them together.
+All images such as illustrations, logos, background images belong here. Make sure to organize them by domain they belong to. For example if you have a row of customer logos, you can add them into `/src/assets/customers` folder to group them together instead of dumping everything into a single top level folder.
 
 ## Videos
 

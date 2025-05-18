@@ -35,5 +35,7 @@
 		"editor.formatOnSave": true
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"eslint.enable": false,
+	"typescript.preferences.autoImportFileExcludePatterns": ["postcss", "next/router/**", "next/dist/client/router/**", "radix-ui", "react-aria", "recharts"]
 }

@@ -16,7 +16,7 @@ npm run dev
 
 > This will automatically install npm dependencies and start the development server.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ## Documentation
 
@@ -25,6 +25,7 @@ Make sure to read this main README file as well as different README files that a
 To avoid documentation duplication (and it going out of sync), where appropriate, this main README will point out other docs that should be read for a particular section.
 
 ## Source code
+
 ### Application source code
 
 Application source code is placed in `/src` folder in order to isolate it from other development or repository only code. This allows you to easily focus on a single folder with application specific code, but it also allows tools to target this folder specifically for tasks such as linting in order to reduce the scope of work those tools have to do. Imagine a tool like ESLint or Prettier just running on `/src` folder instead of running through all code in a repository.
@@ -71,13 +72,13 @@ To get a better developer experience, there are some recommendations on code edi
 
 In order to get the best experience out of the box, [VSCode](https://code.visualstudio.com/) is recommended, but it's not required. Formatting and linting runs as a separate step outside the editor so your editor choice won't mess up anything.
 
-There are some recommended VSCode extensions set up as part of this project, but you are not forced to install them. If you do install them, you will get a better developer experience with auto code formatting on save and linting warnings/errors directly inside your editor.
+There are some recommended VSCode extensions set up as part of this project and you should install them in order to get the best experience.
 
 ### Other code editors
 
 In case you use another code editor, just make sure these integrations/extensions are installed and enabled for better developer experience:
 
-- [ESLint](https://eslint.org/) - checks your JS/TS code and warns you about potential problems
+- [Biome](https://biomejs.dev/) - checks your JS/TS code and warns you about potential problems
   - it does run on each PR so editor integration isn't necessary, but it's quite helpful to get feedback on your code as early as possible
 
 These aren't required, but they can make your developer experience a lot better while working on this project.

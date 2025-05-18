@@ -1,43 +1,231 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.0.0-beta.4/schema.json",
 	"vcs": {
-		"enabled": true,
+		"enabled": false,
 		"clientKind": "git",
-		"useIgnoreFile": true,
-		"defaultBranch": "main"
+		"useIgnoreFile": true
 	},
 	"formatter": {
-		"enabled": true,
-		"formatWithErrors": false,
-		"indentStyle": "tab",
-		"indentWidth": 2,
-		"lineEnding": "lf",
-		"lineWidth": 160,
-		"attributePosition": "auto",
-		"ignore": ["./dist", "./coverage", "api/**/client.ts", "api/**/api-generated.ts", "src/paths/**", "**/.next", "**/.github"]
-	},
-	"organizeImports": {
-		"enabled": true
+		"includes": [
+			// Exclusions must come last because Biome processes these in order apparently. Inclusion globs last would negate some of these exclusions before it
+			"src/**/*.tsx",
+			"src/**/*.ts",
+			"*.json",
+			"*.jsonc",
+			"!dist/**",
+			"!coverage/**",
+			"!.next/**",
+			"!.git/**",
+			"!.github/**",
+			"!node_modules/**",
+			"!src/paths/**",
+			"!api/**/client.ts",
+			"!api/**/api-generated.ts"
+		]
 	},
 	"linter": {
 		"enabled": true,
-		"rules": {
-			"recommended": true
+		"domains": {
+			"react": "recommended",
+			"next": "recommended"
 		},
-		"ignore": ["./dist", "./coverage", "api/**/client.ts", "api/**/api-generated.ts", "src/paths/**", "**/.next", "**/.github", ".vscode/**"]
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noBannedTypes": "error",
+				"noExcessiveCognitiveComplexity": {
+					"level": "warn",
+					"options": {
+						"maxAllowedComplexity": 15
+					}
+				},
+				"noForEach": "warn",
+				"noVoid": "warn",
+				"useFlatMap": "warn",
+				"useSimplifiedLogicExpression": "warn"
+			},
+			"correctness": {
+				// Typescript already handles this one
+				"noConstAssign": "off",
+				// Typescript already handles this one
+				"noInvalidUseBeforeDeclaration": "off",
+				"noUndeclaredDependencies": "error",
+				"noUndeclaredVariables": "warn",
+				"useArrayLiterals": "error",
+				// React or Next.js specific rules
+				"useExhaustiveDependencies": "error",
+				"useHookAtTopLevel": "error",
+				"useJsxKeyInIterable": "warn"
+			},
+			"nursery": {
+				"noAwaitInLoop": "warn",
+				"noBitwiseOperators": "warn",
+				"noConstantBinaryExpression": "warn",
+				"noGlobalDirnameFilename": "warn",
+				"noNoninteractiveElementInteractions": "warn",
+				"noSecrets": "warn",
+				"noShadow": "warn",
+				"noTsIgnore": "warn",
+				// Typescript already handles this one
+				"noUnresolvedImports": "off",
+				"useConsistentObjectDefinition": {
+					"level": "warn",
+					"options": {
+						"syntax": "shorthand"
+					}
+				},
+				"useGoogleFontPreconnect": "warn",
+				"useIterableCallbackReturn": "warn",
+				"useNumericSeparators": "warn",
+				"useParseIntRadix": "warn",
+				"noImportCycles": "warn"
+			},
+			"performance": {
+				"noAccumulatingSpread": "warn",
+				"noBarrelFile": "warn",
+				"noReExportAll": "warn",
+				"noImgElement": "warn",
+				"useTopLevelRegex": "warn"
+			},
+			"style": {
+				"noCommonJs": "warn",
+				"noDefaultExport": "warn",
+				"noImplicitBoolean": "warn",
+				"noInferrableTypes": "warn",
+				"noNamespace": "warn",
+				"noNamespaceImport": "warn",
+				"noNonNullAssertion": "error",
+				"noParameterAssign": "warn",
+				"noProcessEnv": "warn",
+				"noSubstr": "warn",
+				"noUnusedTemplateLiteral": "warn",
+				"noYodaExpression": "warn",
+				"useAsConstAssertion": "warn",
+				"useAtIndex": "warn",
+				"useBlockStatements": "warn",
+				"noRestrictedImports": {
+					"level": "warn",
+					"options": {
+						"paths": {
+							"classnames": "Using 'classnames' module directly is not allowed. Use 'mergeClassNames' instead because it works with Tailwind."
+						}
+					}
+				},
+				"useComponentExportOnlyModules": {
+					"level": "warn",
+					"options": {
+						"allowConstantExport": true,
+						"allowExportNames": [
+							"metadata",
+							"generateMetadata",
+							"revalidate"
+						]
+					}
+				},
+				"useConsistentArrayType": {
+					"level": "warn",
+					"options": {
+						"syntax": "shorthand"
+					}
+				},
+				"useConsistentBuiltinInstantiation": "warn",
+				"useConst": "error",
+				"useEnumInitializers": "warn",
+				"useExplicitLengthCheck": "warn",
+				"useExportType": "warn",
+				"useNamingConvention": {
+					"level": "warn",
+					"options": {
+						"strictCase": false,
+						"requireAscii": true
+					}
+				},
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": {
+						"filenameCases": [
+							"kebab-case"
+						],
+						"strictCase": true,
+						"requireAscii": true
+					}
+				},
+				"useForOf": "warn",
+				"useLiteralEnumMembers": "warn",
+				"useNodejsImportProtocol": "warn",
+				"useNumberNamespace": "warn",
+				"useSingleVarDeclarator": "error",
+				"useTemplate": "warn",
+				"useThrowNewError": "warn",
+				"useThrowOnlyError": "warn",
+				"useTrimStartEnd": "warn",
+				// React or Next.js specific rules
+				"useConsistentCurlyBraces": "warn",
+				"useFragmentSyntax": "warn"
+			},
+			"suspicious": {
+				"noCatchAssign": "warn",
+				"noConsole": {
+					"level": "warn",
+					"options": {
+						"allow": [
+							"assert",
+							"error",
+							"info",
+							"warn"
+						]
+					}
+				},
+				"noDebugger": "error",
+				"noEmptyBlockStatements": "warn",
+				"noFocusedTests": "warn",
+				"noVar": "error",
+				"useErrorMessage": "warn",
+				"useGuardForIn": "warn",
+				"useNumberToFixedDigitsArgument": "warn",
+				// Typescript already handles this one
+				"noDuplicateObjectKeys": "off",
+				// Typescript already handles this one
+				"noDuplicateParameters": "off",
+				// React or Next.js specific rules
+				"noCommentText": "warn",
+				"noDocumentImportInPage": "warn",
+				"noSuspiciousSemicolonInJsx": "warn",
+				// Typescript already handles this one
+				"noDuplicateJsxProps": "off"
+			}
+		},
+		"includes": [
+			"src/**/*.ts",
+			"src/**/*.tsx",
+			"!dist/**",
+			"!coverage/**",
+			"!.next/**",
+			"!.git/**",
+			"!.github/**",
+			"!node_modules/**",
+			"!src/paths/**",
+			"!api/**/client.ts",
+			"!api/**/api-generated.ts"
+		]
 	},
 	"javascript": {
 		"formatter": {
 			"enabled": true,
-			"jsxQuoteStyle": "double",
-			"quoteProperties": "asNeeded",
-			"trailingComma": "es5",
-			"semicolons": "always",
 			"arrowParentheses": "always",
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 160,
+			"attributePosition": "auto",
 			"bracketSpacing": true,
-			"bracketSameLine": false,
+			"expand": "always",
+			"quoteProperties": "asNeeded",
 			"quoteStyle": "double",
-			"attributePosition": "auto"
+			"semicolons": "always",
+			"trailingCommas": "all",
+			"jsxQuoteStyle": "double",
+			"bracketSameLine": false
 		}
 	},
 	"json": {
@@ -46,7 +234,37 @@
 			"indentWidth": 4,
 			"indentStyle": "tab",
 			"lineWidth": 160,
-			"lineEnding": "lf"
+			"lineEnding": "lf",
+			"expand": "always"
 		}
-	}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 160,
+			"quoteStyle": "double"
+		}
+	},
+	"overrides": [
+		{
+			"includes": [
+				// Allow default exports in Next.js route files because they are required to be default exports
+				"src/**/page.tsx",
+				"src/**/layout.tsx",
+				"src/**/loading.tsx",
+				"src/**/error.tsx"
+			],
+			"linter": {
+				"enabled": true,
+				"rules": {
+					"style": {
+						"noDefaultExport": "off"
+					}
+				}
+			}
+		}
+	]
 }

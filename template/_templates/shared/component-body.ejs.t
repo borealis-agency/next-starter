@@ -1,5 +1,3 @@
-import styles from "./<%= name %>.module.scss";
-
 type <%= name %>Props = {
   // TODO: Replace this placeholder prop with actual component props
   placeholderProp: string;

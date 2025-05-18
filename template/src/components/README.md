@@ -4,6 +4,23 @@ This folder should contain common, more shared components. So your typical butto
 
 These should be the more common building blocks and them modules should have more "domain specific" components.
 
+## Folder structure
+
+Component files go into the top level `/components` folder without creating specific folders for each component. We do this because most of the time components have a single file and adding additional nesting just makes the folder structure more complex.
+
+If you have multiple components that are tied to similar things, feel free to prefix them (e.g. input.ts, input-numeric.ts, input-password.ts).
+
+```
+└── components/
+    ├── button.tsx
+    ├── checkbox.tsx
+    ├── documents-list.ts
+    ├── input.ts
+    ├── input-numeric.ts
+    ├── typography.ts
+    └── ...
+```
+
 ## Generators
 
 There are couple of generators available for components.
@@ -13,7 +30,7 @@ There are couple of generators available for components.
 To generate common (shared) component, run this command. Make sure to name the component using PascalCase as you would usually name a React component.
 
 ```bash
-npx hygen component shared ComponentName
+npx hygen component shared my-component-name
 ```
 
 This will generate a component inside `/src/components` folder. Just remove few lines of boilerplate code and you are good to go!

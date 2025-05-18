@@ -2,7 +2,7 @@
 to: src/components/Modal/useModalDialog.tsx
 unless_exists: true
 ---
-import { NiceModalHandler, useModal } from "@ebay/nice-modal-react";
+import { type NiceModalHandler, useModal } from "@ebay/nice-modal-react";
 
 type NiceModalArgs<T> = T extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>
   ? Omit<React.ComponentProps<T>, "id">

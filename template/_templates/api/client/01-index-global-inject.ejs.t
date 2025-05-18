@@ -3,4 +3,4 @@ to: src/api/index.ts
 unless_exists: true
 ---
 export * from "./api-generated";
-export * from "./api-client";
+export { ApiClient } from "./api-client";

@@ -1,8 +1,6 @@
 # Simple workflow that does these steps on pull request to certain branches:
 # 1. Install npm dependencies (with caching enabled)
 # 2. Run JS/TS linting
-# 3. Run style linting
-# $. Show report from step #2 if any warnings/errors were found
 
 name: Lint and typecheck
 
@@ -31,7 +29,7 @@ jobs:
 
         # Setup Node.js to be used inside this runner
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
           cache: "npm"
@@ -43,7 +41,7 @@ jobs:
 
         # Lint code using Biome (https://biomejs.dev/)
       - name: Lint code
-        run: npx biome ci src/
+        run: npx biome ci --error-on-warnings src/
         if: ${{ success() || failure() }}
 
         # Run TypeScript to check if types are valid inside the project
