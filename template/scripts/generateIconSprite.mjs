@@ -96,9 +96,7 @@ const spriter = new SVGSpriter({
 		symbol: {
 			inline: true,
 			dest: "",
-			example: {
-				dest: "icon-symbols-example.html",
-			},
+			example: false,
 			bust: true,
 			sprite: "icon-symbols.svg",
 		},
@@ -111,7 +109,7 @@ for (const iconRelativePath of allFilePaths) {
 	spriter.add(filePath, getSvgFileName(iconRelativePath), fs.readFileSync(iconRelativePath, "utf-8"));
 }
 
-const constantsFolderPath = path.resolve(projectSourceFolder, "./constants");
+const constantsFolderPath = path.resolve(projectSourceFolder, "./src/constants");
 // If constants folder doesn't exist, just create it because we need it to exist when we write our file
 ensureFolderExists(constantsFolderPath);
 
@@ -125,9 +123,8 @@ fs.writeFileSync(
 export const ICONS_SPRITE_URL = "/icon-sprite/${compiledSpriteName}";
 `
 );
-appendToFileOnce(path.resolve(constantsFolderPath, "index.ts"), 'export * from "./icon-sprite";');
 
-const typesFolderPath = path.resolve(projectSourceFolder, "./types");
+const typesFolderPath = path.resolve(projectSourceFolder, "./src/types");
 // If types folder doesn't exists, just create it because we need it to exist when we write our file
 ensureFolderExists(typesFolderPath);
 
